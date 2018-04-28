@@ -17,6 +17,7 @@
                     <hr>
                     <table class="table">
                         <thead>
+                            <th>Group Link</th>
                             <th>Group Name</th>
                             <th>Description</th>
                             <th>Owner</th>
@@ -29,6 +30,7 @@
                         <tbody>
                             @foreach($groups as $key=> $group)
                             <tr>
+                                <td>{{ $group->admin_group_link}}</td>
                                 <td>{{ $group->admin_group_name}}</td>
                                 <td>{{ $group->admin_group_description}}</td>
                                 <td>{{ $group->admin_group_owner}}</td>
@@ -42,7 +44,7 @@ for($i=0; $i<5; ++$i){
                                 <td>{{ $group->admin_group_follower}}</td>
                                 <td>{{ $group->admin_group_status}}</td>
                                 
-                                <td><a class="btn btn-primary" href="{{ url('/group/create')}}"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;<a class="btn btn-primary" href="{{ url('/group/detail/'.$group->id)}}"><i class="fas fa-info"></i></a></td>
+                                <td><a class="btn btn-primary" href="{{ url('/group/edit/'.$group->id)}}"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;<a class="btn btn-primary" href="{{ url('/group/detail/'.$group->id)}}"><i class="fas fa-info"></i></a></td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -20,4 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/group/create', 'HomeController@create')->name('group_create');
 Route::get('/group/detail/{groupId}', 'HomeController@detail')->name('group_detail');
-Route::get('/group/edit', 'HomeController@edit')->name('group_edit');
+Route::get('/group/edit/{id}', 'HomeController@edit')->name('group_edit');
+Route::post('/group/store', 'HomeController@store')->name('group_store');
+Route::post('/group/update/{id}', 'HomeController@update')->name('group_update');

@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <td>Group Image</td>
-                                <td><img src="{{ $group->admin_group_image}}"></td>
+                                <td><img src="data:image/jpeg;base64,{{ base64_encode($group->admin_group_image)}}"></td>
                             </tr>
                             <tr>
                                 <td>Group Owner</td>
