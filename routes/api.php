@@ -16,3 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/all_groups', 'HomeController@all_groups')->name('all_groups');

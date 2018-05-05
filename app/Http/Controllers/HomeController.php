@@ -125,4 +125,15 @@ class HomeController extends Controller
         $groups->save();
         return redirect()->back()->with('status', trans('user.group_update_success'));
     }
+
+    public function all_groups()
+    {
+        $all_groups =  $this->group->all_groups();
+        foreach ($all_groups as $key => $value) {
+            $value->admin_group_image = base64_encode($value->admin_group_image);
+        }
+
+return response() -> json($all_groups, 200, ['Content-type'=> 'application/json; charset=utf-8'], JSON_UNESCAPED_UNICODE);
+        
+    }
 }

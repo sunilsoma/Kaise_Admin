@@ -41,4 +41,9 @@ class Home extends Model
         return $groups->save();
 	//echo 		$request->admin_group_link; die;
 	}
+
+	public function all_groups()
+	{
+		return $query = $this->connection->table('admin_groups as u')->select(['u.*','ccu.admin_category_name',DB::raw('MAX(u.admin_group_rating)')])->leftjoin( 'admin_groups_categories as ccu', 'ccu.id', '=', 'u.admin_group_categories_id' )->groupBy('ccu.id')->paginate(5);
+	}
 }
